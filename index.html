@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>Notável</title>
+</head>
+
+<body>
+    <header>
+        <img src="./Assets/Logo.svg" alt="Notável Logo">
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Grade de Notas</a>
+                </li>
+                <li>
+                    <a href="#">Sobre o dev</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="display_notas">
+
+            <h2 class="sr-only">Notas Status</h2>
+
+            <div class="card">
+                <h3>
+                    <span>Menor média</span>
+                </h3>
+                <p id="menorMedia_display">4.3<br>Quimica</p>
+            </div>
+
+            <div class="card status">
+                <h3>
+                    <span>Status do ano</span>
+                </h3>
+                <p id="status_display">Aprovado</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span>Maior média</span>
+                </h3>
+                <p id="maiorMedia_display">9.2 Matemática</p>
+            </div>
+        </section>
+
+        <section id="notas">
+            <h2 class="sr-only">Grade de notas</h2>
+
+            <div class="button new">
+                <a href="#" onclick="Modal.open()"> + Nova Grade</a>
+            </div>
+
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Matérias/Bimestre</th>
+                        <th>1º Bismestre</th>
+                        <th>2º Bismestre</th>
+                        <th>3º Bismestre</th>
+                        <th>4º Bismestre</th>
+                        <th>Média</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lingua Portuguesa</td>
+                        <td>8,9</td>
+                        <td>8,9</td>
+                        <td>8,9</td>
+                        <td>8,9</td>
+                        <td>8,9</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!--  <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>+ Nova Grade</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <span>Divisao da grade</span>
+                    <div class="input-group">
+                        <label class="sr-only" for="divisao_ano">Divisao do ano</label>
+                        <select name="divisao_ano" id="div_ano" class="button new" >
+                            <option value="2">Bimestral</option>
+                            <option value="3">Trimestral</option>
+                            <option value="4">Quadrimestral</option>
+                        </select>
+                    </div>
+                    <span>Nome da matéria</span>
+                    
+                    <div class="input-group">
+                        <label class="sr-only" for="materia">Insira o nome da matéira</label>
+                        <input type="text" id="nome_materia" name="materia">
+                    </div>
+
+                    <div class="input-group materia">
+                        <button>+ Matéria</button>
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>-->
+
+    <footer>
+        <p>© Notável</p>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
+
+<!-- 
+    Header:
+        - LOGO  --OK
+        - NAVBAR --OK
+    Main:
+        - TITLE (encima dos cards)
+        - 3 CARDS ALINHADOS
+        - BUTTON
+        - ANO
+        - GRADE DE MATÉRIAS
+    Footer:
+        - NOME DO PROJETO E ANO
+    
+    ABAIXO DE 12 CARACTERES NOS CARD ADICIONAR A TAG <br> ENTRE A NOTA E O NOME
+    DA MATÉRIA
+    -->
