@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -53,6 +54,12 @@ a:hover {
 select {
     color: var(--navbar);
     text-decoration: none;
+
+    width: 100%;
+    height: 3rem;
+
+    font-size: 120%;
+    
 }
 
 button {
@@ -73,28 +80,9 @@ button:hover {
     
 }
 
-.button.new {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: .8rem;
-}
-
-.button.new select{
-    width: 100%;
-    max-width: 20ch;
-    color: var(--green);
-    border: none;
-    background-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    line-height: 1.1;
-}
-
 .button.cancel{
     color: var(--navbar);
-    border: 2px var(--bad_bg) solid;
+    background-color: var(--bad_bg);
     border-radius: 00.25rem;
 
     height: 50px;
@@ -103,11 +91,11 @@ button:hover {
     align-items: center;
     justify-content:center;
 
-    opacity: 0.6;
+    
 }
 
 .button.cancel:hover{
-    opacity: 1;
+    background: var(--headerbg);
 }
 /*------------------ HEADER ------------------*/
 header {
@@ -163,7 +151,7 @@ nav a:hover {
     background: var(--navbar);
     padding: 1.5rem 2rem;
     width: 15rem;
-    height: 12rem;
+    height: 10rem;
     border-radius: .5rem;
     margin-bottom: 2rem;
     margin-left: 2.5rem;
@@ -179,10 +167,14 @@ nav a:hover {
 
 .card p{
     font-size: 2rem;
-    line-height: 3rem;
+    line-height: 2.5rem;
     color: var(--background);
-    margin-top: 2.8rem;
+    margin-top: 2.5rem;
 }
+.card.status p{
+    margin-top: 3.5rem;
+}
+
 .card span {
     color: var(--navbar);
 }
@@ -198,6 +190,7 @@ nav a:hover {
 #data-table {
     width: 100%;
     border-spacing: 0 0,5rem;
+    text-align: center;
     color: var(--background);
 }
 
@@ -212,15 +205,15 @@ table tbody tr td:last-child{
 }
 
 table thead th {
-    background-color: var(--navbar);
+    background-color: var(--headerbg);
     font-weight: normal;
     padding: 1rem 1rem;
-
+    opacity: 0.7;
     text-align: center;
 }
 
 table tbody tr{
-    opacity: 0.7;
+    opacity: 0.6;
 }
 table tbody tr:hover{
     opacity: 1;
@@ -230,16 +223,106 @@ table tbody td{
     background: var(--navbar);
     padding: 1rem 2rem; 
 }
+/*------------------ MODAL ------------------*/
+.modal-overlay {
+    width: 100%;
+    height: 100%;
 
+    background-color: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background-color: var(--background);
+    padding: 2.4rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 2rem;
+
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/*------------------ FORM ------------------*/
+#form {
+    max-width: 500px;
+}
+
+#form span {
+    font-size: 150%;
+    color: var(--navbar);
+}
+
+input{
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group.materia {
+    border: none;
+    border-radius: 0.2rem;
+    
+    padding: 0.8rem;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button{
+  width: 48%;
+}
 /*------------------ FOOTER ------------------*/
 
 footer {
     text-align: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 2rem 0 2rem;
+    padding: 1rem 0 1rem;
     color: var(--background);
 
     background-color: var(--headerbg);
+}
+/*------------------ MEDIA ------------------*/
+@media (min-width: 800px) {
+    html{
+        font-size: 87.5%;
+    }
+
+    #balance{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
 }
